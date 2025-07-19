@@ -1,5 +1,6 @@
 # VirageMacro-Cracked
-The premium version of virage's grow a garden macro for free
+The premium version of virage's grow a garden macro for free.
+Just download the .zip file above
 
 # How can you do this yourself?
 Follow these steps to crack Virage's premium macro yourself
