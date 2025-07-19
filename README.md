@@ -1,18 +1,18 @@
 # VirageMacro-Cracked
-The premium version of virage's grow a garden macro for free.
+The premium version of virage's grow a garden macro for free.  
 Just download the .zip file above
 
 # How can you do this yourself?
-Follow these steps to crack Virage's premium macro yourself
+Follow these steps below to crack Virage's premium macro yourself!
 
 
 # 1: Download the official file
-Join [virage's discord server](https://discord.gg/virage) and get the paid verion of Virage's macro in the "macro-link" channel
-Note: If you attempt to use these steps to crack the free version it will not work!
-After do this, extract the file
+Join [virage's discord server](https://discord.gg/virage) and get the paid verion of Virage's macro in the "macro-link" channel  
+Note: If you attempt to use these steps to crack the free version it will not work!  
+After you do this, extract the file.  
 
 # 2: Open up the ahk code
-Find main.ahk in the extracted file, and right click it.
+Find main.ahk in the extracted file, and right click it.  
 Click on "edit in notepad"
 
 # 3: Find the paywall and delete it
