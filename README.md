@@ -66,7 +66,7 @@ if (!isVerified) {
 and delete it.  
 In the future, virage might make small changes to the paywall, and if that happens you can ctrl-f anything in the code above to try to locate it, as there is a very small chance he can redo all of the paywall.  
 
-# If you want an actually god macro (that is also free!)...
+# If you want an actually good macro (that is also free!)...
 Go to https://github.com/epicisgood/Grow-a-Garden-Macro
 
 
