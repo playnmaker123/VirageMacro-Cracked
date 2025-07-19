@@ -17,7 +17,48 @@ Click on "edit in notepad"
 # 3: Find the paywall and delete it
 Use Control F, and search up "username := Trim(username)"
 Select all of this code:
-<pre lang="markdown"> ```autohotkey /* VerifyUser(username) { global GAME_PASS_ID username := Trim(username) reqBody := "{""usernames"":[""" username """],""excludeBannedUsers"":true}" whr := ComObjCreate("WinHttp.WinHttpRequest.5.1") whr.Open("POST","https://users.roblox.com/v1/usernames/users",false) whr.SetRequestHeader("Content-Type","application/json") whr.Send(reqBody), whr.WaitForResponse() if (whr.Status!=200 || !RegExMatch(whr.ResponseText,"""id"":\s*(\d+)",m)) return 0 userId := m1 ownURL := "https://inventory.roblox.com/v1/users/" userId . "/items/GamePass/" GAME_PASS_ID whr2 := ComObjCreate("WinHttp.WinHttpRequest.5.1") whr2.Open("GET",ownURL,false), whr2.Send(), whr2.WaitForResponse() if (whr2.Status!=200) ; request itself failed return 0 return !RegExMatch(whr2.ResponseText, """data"":\s*\[\s*\]") } IniRead, isVerified, %settingsFile%, Main, %VERIFIED_KEY%, 0 if (!isVerified) { InputBox, rbUser, Premium Access, Please enter your Roblox username: if (ErrorLevel) ExitApp ; user cancelled if (VerifyUser(rbUser)) { IniWrite, 1, %settingsFile%, Main, %VERIFIED_KEY% IniWrite, %rbUser%, %settingsFile%, Main, VerifiedUsername MsgBox, 0, Success, Verification successful, enjoy the macro! } else { MsgBox, 16, Access Denied, Sorry, that account does not own the required game-pass. ExitApp } } */ ``` </pre>
+```ahk
+/*
+VerifyUser(username) {
+    global GAME_PASS_ID
+    username := Trim(username)
+
+    reqBody := "{""usernames"":[""" username """],""excludeBannedUsers"":true}"
+    whr := ComObjCreate("WinHttp.WinHttpRequest.5.1")
+    whr.Open("POST","https://users.roblox.com/v1/usernames/users",false)
+    whr.SetRequestHeader("Content-Type","application/json")
+    whr.Send(reqBody),  whr.WaitForResponse()
+    if (whr.Status!=200 || !RegExMatch(whr.ResponseText,"""id"":\s*(\d+)",m))
+        return 0
+    userId := m1
+
+    ownURL := "https://inventory.roblox.com/v1/users/" userId
+           .  "/items/GamePass/" GAME_PASS_ID
+    whr2 := ComObjCreate("WinHttp.WinHttpRequest.5.1")
+    whr2.Open("GET",ownURL,false), whr2.Send(), whr2.WaitForResponse()
+    if (whr2.Status!=200)                        ; request itself failed
+        return 0
+
+    return !RegExMatch(whr2.ResponseText, """data"":\s*\[\s*\]")
+}
+
+
+IniRead, isVerified, %settingsFile%, Main, %VERIFIED_KEY%, 0
+if (!isVerified) {
+    InputBox, rbUser, Premium Access, Please enter your Roblox username:
+    if (ErrorLevel)
+        ExitApp   ; user cancelled
+
+    if (VerifyUser(rbUser)) {
+        IniWrite, 1,              %settingsFile%, Main, %VERIFIED_KEY%
+        IniWrite, %rbUser%,       %settingsFile%, Main, VerifiedUsername
+        MsgBox, 0, Success, Verification successful, enjoy the macro!
+    } else {
+        MsgBox, 16, Access Denied, Sorry, that account does not own the required game-pass.
+        ExitApp
+    }
+}
+*/
 and delete it.
 In the future, virage might make small changes to the paywall, and if that happens you can ctrl-f anything in the code above to try to locate it, as there is a very small chance he can redo all of the paywall.
 
