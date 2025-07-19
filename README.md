@@ -15,8 +15,9 @@ Find main.ahk in the extracted file, and right click it.
 Click on "edit in notepad"
 
 # 3: Find the paywall and delete it
-Use Control F, and search up "username := Trim(username)"
+Use Control F, and search up "username := Trim(username)".
 Select all of this code:
+
 ```ahk
 /*
 VerifyUser(username) {
@@ -60,6 +61,7 @@ if (!isVerified) {
 }
 */
 ```
+
 and delete it.
 In the future, virage might make small changes to the paywall, and if that happens you can ctrl-f anything in the code above to try to locate it, as there is a very small chance he can redo all of the paywall.
 
