@@ -17,7 +17,7 @@ Click on "edit in notepad"
 
 # 3: Find the paywall and delete it
 Use Control F, and search up "username := Trim(username)".  
-Select all of this code:  
+Select all of the paywall (it usually looks something like this):  
 
 ```ahk
 /*
